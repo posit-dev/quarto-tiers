@@ -13,23 +13,15 @@ If you're using version control, you will want to check in this directory.
 
 ## Using
 
-The shortcode `{{< v <version> style=<CSS style> >}}` will display a badge with the given version number.
+The shortcode `{{< tier <tier> style=<CSS style> >}}` will display a badge with the given tier styling.
 
-If `<version>` matches `quarto-tiers` from the YAML frontmatter, the badge will be displayed with `bg-success` CSS class from Bootstrap, otherwise it will be displayed with `bg-danger`.
+If `<tier>` matches "Basic", "Enhanced", or "Advanced" then it will display with the 3 tier colors, otherwise it will default to a Posit dark grey.
 
-- Short specification:
-
-  ```yaml
-  quarto-tiers: 1.4
-  ```
-
-- Complete specification:
+Specify the `quarto-tiers` in the YAML as so:
 
   ```yaml
   quarto-tiers:
-    version: 1.4
-    type: pre-release
-    default: release
+    tier: all
   ```
 
 Additional CSS styles can be provided with the `style` parameter which will be added to the badge as inline CSS.
