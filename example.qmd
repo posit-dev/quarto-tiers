@@ -1,0 +1,22 @@
+---
+title: "Version Badge Example"
+toc: true
+code-tools: true
+quarto-tiers:
+  tier: all
+---
+
+## Basic = Entry level {{< tier Basic >}} 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
+eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
+
+## Enhanced beyond the basics {{< tier Standard >}} 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
+eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
+
+## All the good stuff {{< tier Advanced >}}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
+eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
