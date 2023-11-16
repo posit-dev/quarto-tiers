@@ -26,6 +26,14 @@ Specify the `quarto-tiers` in the YAML as so:
   quarto-tiers:
     tier: true
   ```
+  
+To use the Quarto shortcode, use the following syntax:
+
+```
+{{< tier Basic >}} 
+```
+
+This should be allowed anywhere, such as headers, in tables, or inline.
 
 Additional CSS styles can be provided with the `style` parameter which will be added to the badge as inline CSS.
 
