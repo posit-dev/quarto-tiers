@@ -32,34 +32,6 @@ return {
 
       local version_text = pandoc.utils.stringify(args[1])
       if meta["quarto-tiers"] then
-        if meta["quarto-tiers"]["tier"] then
-          version_badge_content = pandoc.utils.stringify(meta["quarto-tiers"]["tier"])
-        else
-          version_badge_content = pandoc.utils.stringify(meta["quarto-tiers"])
-        end
-        if meta["quarto-tiers"]["color"] then
-          type_badge_content = pandoc.utils.stringify(meta["quarto-tiers"]["color"])
-        else
-          type_badge_content = "pre-release"
-        end
-        if meta["quarto-tiers"]["default"] then
-          default_type_badge_content = pandoc.utils.stringify(meta["quarto-tiers"]["default"])
-        else
-          default_type_badge_content = "release"
-        end
-        if meta["quarto-tiers"]["prefix"] then
-          default_prefix_content = pandoc.utils.stringify(meta["quarto-tiers"]["prefix"])
-        else
-          default_prefix_content = ""
-        end
-
-        -- if version_badge_content == version_text then
-        --   css_class = "badge-target"
-        --   version_type = ' title="' .. type_badge_content .. '"'
-        -- else 
-        --   -- css_class = "badge-default bg-success"
-        --   version_type = ' title="' .. default_type_badge_content .. '"'
-        -- end
         
         local style = pandoc.utils.stringify(kwargs['style'])
         if style ~= "" then
@@ -85,7 +57,6 @@ return {
           css_class = 'badge-alt'
         end
       else
-        -- css_class = "badge-default bg-success"
         version_type = ' title="' .. default_type_badge_content .. '"'
       end
 

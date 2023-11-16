@@ -1,9 +1,9 @@
 ---
-title: "Version Badge Example"
+title: "Quarto Tiers Example"
 toc: true
 code-tools: true
 quarto-tiers:
-  tier: all
+  tier: true
 ---
 
 ## Basic = Entry level {{< tier Basic >}} 
@@ -17,6 +17,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
 eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
 
 ## All the good stuff {{< tier Advanced >}}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
+eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
+
+## Pro Status {{< tier Workbench >}}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
 eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
