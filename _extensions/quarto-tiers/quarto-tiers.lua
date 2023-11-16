@@ -69,21 +69,20 @@ return {
         end
         
         if version_text == "Basic" then
-          -- posit burgandy
-          style_text = ' style="background-color: #9A4665 !important; line-height: 1; font-size: 10px !important; vertical-align: middle;"'
-          -- doesn't appear to be applying the badge CSS
-          css_class = 'pro-header badge-wb'
+          -- posit blue
+          css_class = 'badge-basic'
         elseif version_text == "Enhanced" then
           -- posit light blue
-          style_text = ' style="background-color: #447099 !important; line-height: 1; font-size: 10px !important; vertical-align: middle;"'
-          css_class = 'badge-enhanced pro-header'
+          css_class = 'badge-enhanced'
         elseif version_text == "Advanced" then
           -- posit dark blue
-          style_text = ' style="background-color: #213D4F !important; line-height: 1; font-size: 10px !important; vertical-align: middle;"'
-          css_class = 'badge-advanced pro-header'
-        else 
+          css_class = 'badge-advanced'
+        elseif version_text == "Workbench" then
+          -- posit burgundy
+          css_class = 'badge-wb'
+        else
           -- posit gray
-          style_text = ' style="background-color: #404041 !important; line-height: 1; font-size: 10px !important; vertical-align: middle;"'
+          css_class = 'badge-alt'
         end
       else
         -- css_class = "badge-default bg-success"
