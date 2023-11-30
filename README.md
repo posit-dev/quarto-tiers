@@ -1,14 +1,18 @@
 # Quarto Tiers Extension For Quarto
 
-`quarto-tiers` is an extension for Quarto to provide a shortcode to display the product tiers for Posit pro products.
+`quarto-tiers` is an extension for Quarto to provide a shortcode to display
+styled packaging tiers for Posit pro products.
 
 ## Installing
 
-This repo is currently not public, so you will need to pull the repo down and copy the `_extensions` folder into your Quarto repo. If we do make it public eventually, we could use the following:
+This repository is not public, so you cannot use `quarto add` to add it to
+your Quarto project using the `rstudio/quarto-tiers` GitHub repository path.
+
+Instead, clone the repository locally and then call `quarto add` with a
+file-system path.
 
 ```bash
-# currently doesn't work due to lack of auth
-quarto add rstudio/quarto-tiers
+quarto add [path-to-repository]/quarto-tiers
 ```
 
 This will install the extension under the `_extensions` subdirectory.
@@ -16,28 +20,41 @@ If you're using version control, you will want to check in this directory.
 
 ## Using
 
-The shortcode `{{< tier <tier> style=<CSS style> >}}` will display a badge with the given tier styling.
+Enable this extension in your `_quarto.yml` or the document YAML.
 
-If `<tier>` matches "Basic", "Enhanced", or "Advanced" then it will display with the 3 tier colors, Workbench will be Posit maroon, otherwise it will default to a Posit dark grey.
-
-Specify the `quarto-tiers` in the YAML as so:
-
-  ```yaml
-  quarto-tiers:
-    tier: true
-  ```
-  
-To use the Quarto shortcode, use the following syntax:
-
-```
-{{< tier Basic >}} 
+```yaml
+quarto-tiers:
+  tier: true
 ```
 
-This should be allowed anywhere, such as headers, in tables, or inline.
+The shortcode `{{< tier <tier> >}}` will display a badge using the default
+styling for that tier. The three packaging tiers, "Basic", "Enhanced", and
+"Advanced" receive the three tier colors. The "Workbench" receives Posit
+maroon. Other tier names use the Posit dark gray.
 
-Additional CSS styles can be provided with the `style` parameter which will be added to the badge as inline CSS.
+```markdown
+{{< tier Basic >}}
+{{< tier Enhanced >}}
+{{< tier Advanced >}}
+{{< tier Workbench >}}
+{{< tier Alternate >}}
+```
 
-The extension also provides five CSS classes: `badge-basic`, `badge-enhanced`, `badge-advanced`, `badge-wb`, and `badge-alt` that can be used to style the badge.
+![examples](example.png)
+
+The tier shortcode is allowed anywhere, including headers, tables, and as
+inline text.
+
+Additional CSS styles can be provided with the `style` parameter which will be
+added to the badge as inline CSS.
+
+```markdown
+{{< tier Basic style="font-style: italic;" >}}
+```
+
+![italic example](italic.png)
+
+The extension also provides five CSS classes: `badge-basic`, `badge-enhanced`, `badge-advanced`, `badge-wb`, and `badge-alt` that can be used to style the badges.
 
 ## Example
 

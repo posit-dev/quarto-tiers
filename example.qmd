@@ -25,3 +25,16 @@ eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
 eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
+
+## README examples
+
+These example are given in the `README.md`; they are included to make it
+easier to create screenshots.
+
+{{< tier Basic >}}
+{{< tier Enhanced >}}
+{{< tier Advanced >}}
+{{< tier Workbench >}}
+{{< tier Alternate >}}
+
+{{< tier Basic style="font-style: italic;" >}}
