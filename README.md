@@ -1,4 +1,4 @@
-# Quaarto Tiers Extension For Quarto
+# Quarto Tiers Extension For Quarto
 
 `quarto-tiers` is an extension for Quarto to provide a shortcode to display the product tiers for Posit pro products.
 
