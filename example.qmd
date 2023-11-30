@@ -13,7 +13,7 @@ quarto-tiers:
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
 eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
 
-### Enhanced beyond the basics {{< tier Standard >}}
+### Enhanced beyond the basics {{< tier Enhanced >}}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
 eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
@@ -33,6 +33,11 @@ eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
 eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
 
+### Standing together {{< tier Workbench >}} {{< tier Basic >}} {{< tier Enhanced >}} {{< tier Advanced >}} {{< tier Alternate >}}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
+eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
+
 ## Badges after section headings
 
 ### Basic = Entry level
@@ -44,7 +49,7 @@ eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
 
 ### Enhanced beyond the basics
 
-{{< tier Standard >}}
+{{< tier Enhanced >}}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
 eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
@@ -66,6 +71,13 @@ eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
 ### Alternate
 
 {{< tier Alternate >}}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
+eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
+
+### Standing together
+
+{{< tier Workbench >}} {{< tier Basic >}} {{< tier Enhanced >}} {{< tier Advanced >}} {{< tier Alternate >}}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
 eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
