@@ -6,22 +6,78 @@ quarto-tiers:
   tier: true
 ---
 
-## Basic = Entry level {{< tier Basic >}} 
+## Badges in section headings
+
+### Basic = Entry level {{< tier Basic >}}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
 eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
 
-## Enhanced beyond the basics {{< tier Standard >}} 
+### Enhanced beyond the basics {{< tier Enhanced >}}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
 eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
 
-## All the good stuff {{< tier Advanced >}}
+### All the good stuff {{< tier Advanced >}}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
 eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
 
-## Pro Status {{< tier Workbench >}}
+### Pro Status {{< tier Workbench >}}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
+eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
+
+### Alternate {{< tier Alternate >}}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
+eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
+
+### Standing together {{< tier Workbench >}} {{< tier Basic >}} {{< tier Enhanced >}} {{< tier Advanced >}} {{< tier Alternate >}}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
+eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
+
+## Badges after section headings
+
+### Basic = Entry level
+
+{{< tier Basic >}}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
+eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
+
+### Enhanced beyond the basics
+
+{{< tier Enhanced >}}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
+eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
+
+### All the good stuff
+
+{{< tier Advanced >}}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
+eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
+
+### Pro Status
+
+{{< tier Workbench >}}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
+eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
+
+### Alternate
+
+{{< tier Alternate >}}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
+eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
+
+### Standing together
+
+{{< tier Workbench >}} {{< tier Basic >}} {{< tier Enhanced >}} {{< tier Advanced >}} {{< tier Alternate >}}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
 eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
