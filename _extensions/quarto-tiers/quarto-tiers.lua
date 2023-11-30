@@ -73,7 +73,7 @@ return {
 
       return pandoc.RawInline(
         'html',
-        '<span id="#badge-version" class="pro-header badge ' ..
+        '<span class="pro-header badge ' ..
           css_class .. '"' .. style_text ..
         '>' ..
         version_text ..
