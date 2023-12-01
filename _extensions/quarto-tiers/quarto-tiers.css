@@ -1,74 +1,74 @@
 .badge-basic {
-  color: #fff;
+  color: #fff !important;
   white-space: nowrap;
   background-color: #305775 !important;
 }
 
 a.badge-basic {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 a.badge-basic:hover {
-    color: #fff;
-    text-decoration: none;
+  color: #fff !important;
+  text-decoration: none !important;
 }
 
 .badge-enhanced {
-  color: #fff;
+  color: #fff !important;
   white-space: nowrap;
   background-color: #447099 !important;
 }
 
 a.badge-enhanced {
-    text-decoration: none;
+  text-decoration: none !important;
 }
 
 a.badge-enhanced:hover {
-    color: #fff;
-    text-decoration: none;
+  color: #fff !important;
+  text-decoration: none !important;
 }
 
 .badge-advanced {
-  color: #fff;
+  color: #fff !important;
   white-space: nowrap;
   background-color: #213D4F !important;
 }
 
 a.badge-advanced {
-    text-decoration: none;
+  text-decoration: none !important;
 }
 
 a.badge-advanced:hover {
-    color: #fff;
-    text-decoration: none;
+  color: #fff !important;
+  text-decoration: none !important;
 }
 
 .badge-alt {
-  color: #fff;
+  color: #fff !important;
   white-space: nowrap;
   background-color: #404041 !important;
 }
 
 a.badge-alt {
-    text-decoration: none;
+  text-decoration: none !important;
 }
 
 a.badge-alt:hover {
-    color: #fff;
-    text-decoration: none;
+  color: #fff !important;
+  text-decoration: none !important;
 }
 
 .badge-wb {
-  color: #fff;
+  color: #fff !important;
   white-space: nowrap;
   background-color: #9A4665 !important;
 }
 
 a.badge-wb {
-    text-decoration: none;
+  text-decoration: none !important;
 }
 
 a.badge-wb:hover {
-    color: #fff;
-    text-decoration: none;
+  color: #fff !important;
+  text-decoration: none !important;
 }

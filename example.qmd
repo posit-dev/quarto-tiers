@@ -11,6 +11,8 @@ quarto-tiers:
     url: "https://google.com/search?q=default+advanced+url"
 format:
   html:
+    toc-depth: 6
+    toc-expand: true
     link-external-icon: true
     link-external-newwindow: true
 ---
