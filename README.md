@@ -20,16 +20,12 @@ If you're using version control, you will want to check in this directory.
 
 ## Using
 
-Enable this extension in your `_quarto.yml` or the document YAML.
+The `{{< tier <tier-name> >}}` shortcode is available once the extension is installed
+into your Quarto project.
 
-```yaml
-quarto-tiers:
-  tier: true
-```
-
-The shortcode `{{< tier <tier> >}}` will display a badge using the default
-styling for that tier. The three packaging tiers, "Basic", "Enhanced", and
-"Advanced" receive the three tier colors. The "Workbench" receives Posit
+The `{{< tier <tier-name> >}}` shortcode will display a badge using the
+default styling for that tier. The three packaging tiers, "Basic", "Enhanced",
+and "Advanced" receive the three tier colors. The "Workbench" receives Posit
 maroon. Other tier names use the Posit dark gray.
 
 ```markdown
@@ -42,8 +38,13 @@ maroon. Other tier names use the Posit dark gray.
 
 ![examples](example.png)
 
-The tier shortcode is allowed anywhere, including headers, tables, and as
+The `tier` shortcode is allowed anywhere, including headers, tables, and as
 inline text.
+
+All badges are annotated with the `badge` and `rounded-pill` Bootstrap
+classes. Each bad also receives one of the five CSS classes: `badge-basic`,
+`badge-enhanced`, `badge-advanced`, `badge-wb`, and `badge-alt`, which define
+tier-specific styles.
 
 Additional CSS styles can be provided with the `style` parameter which will be
 added to the badge as inline CSS.
@@ -54,7 +55,36 @@ added to the badge as inline CSS.
 
 ![italic example](italic.png)
 
-The extension also provides five CSS classes: `badge-basic`, `badge-enhanced`, `badge-advanced`, `badge-wb`, and `badge-alt` that can be used to style the badges.
+## Configuration
+
+The `quarto-tiers` YAML configuration can be used to provide optional titles
+and URLs for each badge. When the `title` and `url` fields are present beneath
+`quarto-tiers`, they provide default values for all product tier badges. Each
+tier can override these choices by providing tier-named sub-configurations.
+The `title` and `url` fields are optional.
+
+```yaml
+quarto-tiers:
+  title: "Default tier title."
+  url: "https://google.com/search?q=default+tier+url"
+  Enhanced:
+    title: "The default enhanced title."
+  Advanced:
+    url: "https://google.com/search?q=default+advanced+url"
+```
+
+Additionally, the short-code can supply `url` and `title`. These override any
+values provided by the YAML. The `url` and `title` arguments are optional.
+
+```markdown
+{{< tier Basic url="https://example.com/" >}}
+```
+
+When a URL has been provided, the shortcode produces an `<a ...>Tier</a>` HTML
+snippet. Without a URL, a `<span ...>Tier</span>` is emitted.
+
+When a title has been provided, the `<a>` or `<span>` element is given a
+`title="TITLE"` attribute.
 
 ## Example
 

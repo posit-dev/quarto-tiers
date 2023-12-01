@@ -1,75 +1,74 @@
-.badge-default, .badge-target {
-  vertical-align: text-bottom !important;
-  font-size: .65em !important;
-}
-
-/* 
-.nav-link .badge-default,
-.nav-link .badge-target {
-  display: none;
-}
-*/
-
-/* Posit Colours
-.badge-default {
-  vertical-align: text-bottom !important;
-  font-size: .65em !important;
-  background-color: #447099 !important;
-}
-
-.badge-target {
-  vertical-align: text-bottom !important;
-  font-size: .65em !important;
-  background-color: #EE6331 !important;
-}
-*/
-
 .badge-basic {
-  display: inline-block;
-  line-height: 1;
   color: #fff;
-  text-align: center;
   white-space: nowrap;
   background-color: #305775 !important;
-  border-radius: 50rem !important;
+}
+
+a.badge-basic {
+    text-decoration: none;
+}
+
+a.badge-basic:hover {
+    color: #fff;
+    text-decoration: none;
 }
 
 .badge-enhanced {
-  display: inline-block;
-  line-height: 1;
   color: #fff;
-  text-align: center;
   white-space: nowrap;
   background-color: #447099 !important;
-  border-radius: 50rem !important;
+}
+
+a.badge-enhanced {
+    text-decoration: none;
+}
+
+a.badge-enhanced:hover {
+    color: #fff;
+    text-decoration: none;
 }
 
 .badge-advanced {
-  display: inline-block;
-  line-height: 1;
   color: #fff;
-  text-align: center;
   white-space: nowrap;
   background-color: #213D4F !important;
-  border-radius: 50rem !important;
+}
+
+a.badge-advanced {
+    text-decoration: none;
+}
+
+a.badge-advanced:hover {
+    color: #fff;
+    text-decoration: none;
 }
 
 .badge-alt {
-  display: inline-block;
-  line-height: 1;
   color: #fff;
-  text-align: center;
   white-space: nowrap;
   background-color: #404041 !important;
-  border-radius: 50rem !important;
+}
+
+a.badge-alt {
+    text-decoration: none;
+}
+
+a.badge-alt:hover {
+    color: #fff;
+    text-decoration: none;
 }
 
 .badge-wb {
-  display: inline-block;
-  line-height: 1;
   color: #fff;
-  text-align: center;
   white-space: nowrap;
   background-color: #9A4665 !important;
-  border-radius: 50rem !important;
+}
+
+a.badge-wb {
+    text-decoration: none;
+}
+
+a.badge-wb:hover {
+    color: #fff;
+    text-decoration: none;
 }

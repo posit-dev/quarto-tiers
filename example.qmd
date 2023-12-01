@@ -3,7 +3,16 @@ title: "Quarto Tiers Example"
 toc: true
 code-tools: true
 quarto-tiers:
-  tier: true
+  title: "Default tier title."
+  url: "https://google.com/search?q=default+tier+url"
+  Enhanced:
+    title: "The default enhanced title."
+  Advanced:
+    url: "https://google.com/search?q=default+advanced+url"
+format:
+  html:
+    link-external-icon: true
+    link-external-newwindow: true
 ---
 
 ## Badges in section headings

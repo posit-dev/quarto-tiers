@@ -31,53 +31,85 @@ return {
       })
 
       local version_text = pandoc.utils.stringify(args[1])
-      if meta["quarto-tiers"] then
-        
-        local style = pandoc.utils.stringify(kwargs['style'])
-        if style ~= "" then
-          style_text = ' style="' .. style .. '"'
-        else
-          style_text = ""
-        end
-        
-        if version_text == "Basic" then
-          -- posit blue
-          css_class = 'badge-basic'
-        elseif version_text == "Enhanced" then
-          -- posit light blue
-          css_class = 'badge-enhanced'
-        elseif version_text == "Advanced" then
-          -- posit dark blue
-          css_class = 'badge-advanced'
-        elseif version_text == "Workbench" then
-          -- posit burgundy
-          css_class = 'badge-wb'
-        else
-          -- posit gray
-          css_class = 'badge-alt'
-        end
+      if version_text == "Basic" then
+        -- posit blue
+        css_class = 'badge-basic'
+      elseif version_text == "Enhanced" then
+        -- posit light blue
+        css_class = 'badge-enhanced'
+      elseif version_text == "Advanced" then
+        -- posit dark blue
+        css_class = 'badge-advanced'
+      elseif version_text == "Workbench" then
+        -- posit burgundy
+        css_class = 'badge-wb'
       else
-        version_type = ' title="' .. default_type_badge_content .. '"'
+        -- posit gray
+        css_class = 'badge-alt'
       end
 
-      -- version_text = default_prefix_content .. version_text
-      -- if meta["quarto-tiers"]["changelog"] ~= "" and meta["quarto-tiers"]["changelog"] ~= nil then
-      --   changelog = pandoc.utils.stringify(meta["quarto-tiers"]["changelog"])
-      --   version_text = '<a ' ..
-      --     'href="' .. changelog:gsub("{{version}}", version_text) .. '"' ..
-      --     'style="text-decoration: none; color: inherit;"' ..
-      --   '>' ..
-      --   version_text ..
-      --   '</a>'
-      -- end
+      local style = pandoc.utils.stringify(kwargs['style'])
+      local style_text = ""
+      if style ~= "" then
+        style_text = ' style="' .. style .. '"'
+      else
+        style_text = ""
+      end
 
+      -- Global, then tier, then call-specific configurations for title and URL.
+
+      -- Note: kwargs[NAME] evaluates as truthy even when NAME is not in the
+      -- dictionary. This means that we cannot distinguish between NAME="" and
+      -- NAME not present in the shortcode.
+      
+      local title = pandoc.utils.stringify(kwargs['title'])
+      if title ~= "" then
+        if meta["quarto-tiers"] then
+          if meta["quarto-tiers"]["title"] then
+            title = pandoc.utils.stringify(meta["quarto-tiers"]["title"])
+          end
+          if meta["quarto-tiers"][version_text] then
+            if meta["quarto-tiers"][version_text]["title"] then
+              title = pandoc.utils.stringify(meta["quarto-tiers"][version_text]["title"])
+            end
+          end
+        end
+      end
+        
+      local url = pandoc.utils.stringify(kwargs['url'])
+      if meta["quarto-tiers"] then
+        if meta["quarto-tiers"]["url"] then
+          url = pandoc.utils.stringify(meta["quarto-tiers"]["url"])
+        end
+        if meta["quarto-tiers"][version_text] then
+          if meta["quarto-tiers"][version_text]["url"] then
+            url = pandoc.utils.stringify(meta["quarto-tiers"][version_text]["url"])
+          end
+        end
+      end
+
+      local title_text = ""
+      if title ~= "" then
+        title_text = ' title="' .. title .. '"'
+      end
+
+      local tag = "span"
+      local link_text = ""
+      local nav_class = ""
+      if url ~= "" then
+        tag = "a"
+        link_text = ' href="' .. url .. '"'
+        -- no-external avoids external-link icons
+        nav_class = " no-external"
+      end
+
+      local class_text = ' class="badge rounded-pill ' .. css_class .. nav_class .. '"'
+      
       return pandoc.RawInline(
         'html',
-        '<span class="pro-header badge ' ..
-          css_class .. '"' .. style_text ..
-        '>' ..
+        '<' .. tag .. link_text .. title_text .. class_text .. style_text .. '>' ..
         version_text ..
-        '</span>'
+        '</' .. tag .. '>'
       )
     end
   end
