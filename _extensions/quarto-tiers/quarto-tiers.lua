@@ -63,7 +63,7 @@ return {
       -- NAME not present in the shortcode.
       
       local title = pandoc.utils.stringify(kwargs['title'])
-      if title ~= "" then
+      if title == "" then
         if meta["quarto-tiers"] then
           if meta["quarto-tiers"]["title"] then
             title = pandoc.utils.stringify(meta["quarto-tiers"]["title"])
@@ -77,13 +77,15 @@ return {
       end
         
       local url = pandoc.utils.stringify(kwargs['url'])
-      if meta["quarto-tiers"] then
-        if meta["quarto-tiers"]["url"] then
-          url = pandoc.utils.stringify(meta["quarto-tiers"]["url"])
-        end
-        if meta["quarto-tiers"][version_text] then
-          if meta["quarto-tiers"][version_text]["url"] then
-            url = pandoc.utils.stringify(meta["quarto-tiers"][version_text]["url"])
+      if url == "" then
+        if meta["quarto-tiers"] then
+          if meta["quarto-tiers"]["url"] then
+            url = pandoc.utils.stringify(meta["quarto-tiers"]["url"])
+          end
+          if meta["quarto-tiers"][version_text] then
+            if meta["quarto-tiers"][version_text]["url"] then
+              url = pandoc.utils.stringify(meta["quarto-tiers"][version_text]["url"])
+            end
           end
         end
       end
