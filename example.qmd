@@ -1,7 +1,6 @@
 ---
 title: "Quarto Tiers Example"
 toc: true
-code-tools: true
 quarto-tiers:
   title: "Default tier title."
   url: "https://google.com/search?q=default+tier+url"
@@ -15,39 +14,12 @@ format:
     toc-expand: true
     link-external-icon: true
     link-external-newwindow: true
+    theme:
+      light: flatly
+      dark: darkly
 ---
 
-## Badges in section headings
-
-### Basic = Entry level {{< tier Basic >}}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
-eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
-
-### Enhanced beyond the basics {{< tier Enhanced >}}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
-eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
-
-### All the good stuff {{< tier Advanced >}}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
-eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
-
-### Pro Status {{< tier Workbench >}}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
-eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
-
-### Alternate {{< tier Alternate >}}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
-eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
-
-### Standing together {{< tier Workbench >}} {{< tier Basic >}} {{< tier Enhanced >}} {{< tier Advanced >}} {{< tier Alternate >}}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
-eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
+Do not add badges to section headings, as they often do not present well.
 
 ## Badges after section headings
 
@@ -92,6 +64,22 @@ eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl
 eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
+
+### Callouts
+
+::: {.callout-warning}
+## Licensing restriction {{< tier Enhanced >}} {{< tier Advanced >}}
+
+Blah, blah, blah. Licensing restriction.
+:::
+
+::: {.callout-warning}
+## Licensing restriction
+
+{{< tier Enhanced >}} {{< tier Advanced >}}
+
+Blah, blah, blah. Licensing restriction.
+:::
 
 ## README examples
 

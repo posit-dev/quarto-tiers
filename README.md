@@ -38,8 +38,10 @@ maroon. Other tier names use the Posit dark gray.
 
 ![examples](example.png)
 
-The `tier` shortcode is allowed anywhere, including headers, tables, and as
-inline text.
+Use `tier` shortcode anywhere outside headers; it is appropriate in call-outs,
+tables, and inline text. Using the shortcode in a document header causes the
+document table-of-contents to render poorly and is not recommended in that
+context.
 
 All badges are annotated with the `badge` and `rounded-pill` Bootstrap
 classes. Each bad also receives one of the five CSS classes: `badge-basic`,
