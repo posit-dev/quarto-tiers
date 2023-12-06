@@ -1,75 +1,34 @@
-.badge-default, .badge-target {
-  vertical-align: text-bottom !important;
-  font-size: .65em !important;
+.badge-basic,
+.badge-basic:hover,
+.badge-enhanced,
+.badge-enhanced:hover,
+.badge-advanced,
+.badge-advanced:hover,
+.badge-alt,
+.badge-alt:hover,
+.badge-wb,
+.badge-wb:hover {
+  color: #fff;
+  white-space: nowrap;
+  text-decoration: none;
 }
-
-/* 
-.nav-link .badge-default,
-.nav-link .badge-target {
-  display: none;
-}
-*/
-
-/* Posit Colours
-.badge-default {
-  vertical-align: text-bottom !important;
-  font-size: .65em !important;
-  background-color: #447099 !important;
-}
-
-.badge-target {
-  vertical-align: text-bottom !important;
-  font-size: .65em !important;
-  background-color: #EE6331 !important;
-}
-*/
 
 .badge-basic {
-  display: inline-block;
-  line-height: 1;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  background-color: #305775 !important;
-  border-radius: 50rem !important;
+  background-color: #305775;
 }
 
 .badge-enhanced {
-  display: inline-block;
-  line-height: 1;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  background-color: #447099 !important;
-  border-radius: 50rem !important;
+  background-color: #447099;
 }
 
 .badge-advanced {
-  display: inline-block;
-  line-height: 1;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  background-color: #213D4F !important;
-  border-radius: 50rem !important;
+  background-color: #213D4F;
 }
 
 .badge-alt {
-  display: inline-block;
-  line-height: 1;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  background-color: #404041 !important;
-  border-radius: 50rem !important;
+  background-color: #404041;
 }
 
 .badge-wb {
-  display: inline-block;
-  line-height: 1;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  background-color: #9A4665 !important;
-  border-radius: 50rem !important;
+  background-color: #9A4665;
 }
