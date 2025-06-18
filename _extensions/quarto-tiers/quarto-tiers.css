@@ -10,20 +10,20 @@
 .badge-wb:hover {
   color: #fff;
   white-space: nowrap;
-  text-decoration: none;
+  text-decoration: none !important;
   border: 1px solid #ffffff;
 }
 
 .badge-basic {
-  background-color: #305775;
+  background-color: #297075; //posit-dark-teal-1
 }
 
 .badge-enhanced {
-  background-color: #447099;
+  background-color: #305775; //posit-dark-blue-1
 }
 
 .badge-advanced {
-  background-color: #213D4F;
+  background-color: #17212b; //posit-dark-blue-3
 }
 
 .badge-alt {

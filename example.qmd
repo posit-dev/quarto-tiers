@@ -81,6 +81,12 @@ Blah, blah, blah. Licensing restriction.
 Blah, blah, blah. Licensing restriction.
 :::
 
+### An icon
+
+{{< requirement root >}}
+
+An icon to indicate "requires root".
+
 ## README examples
 
 These example are given in the `README.md`; they are included to make it
