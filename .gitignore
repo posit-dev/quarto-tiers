@@ -9,3 +9,5 @@
 .DS_Store
 .quarto
 /.quarto/
+*_site/
+_site/*
