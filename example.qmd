@@ -60,13 +60,13 @@ eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nunc nisl eu
 
 ### Preview feature
 
-{{< tier Preview >}}
+{{< status Preview >}}
 
 This feature is in preview. Preview features are unsupported and may face breaking changes in a future release. Any issues found in the feature will be addressed during the regular release schedule; they will not result in immediate patches or hotfixes.
 
 ### Beta feature
 
-{{< tier Beta >}}
+{{< status Beta >}}
 
 Beta features are features that are still under development and may change in the future. These features often have known limitations that prevent them from being made available widely, but may be enabled on your account for experimentation. Your feedback on these features helps shape future work.
 

@@ -22,118 +22,87 @@
 # SOFTWARE.
 ]]
 
+-- Map version_text to badge CSS class
+local badge_classes = {
+  Basic = 'badge-basic',         -- posit dark teal
+  Enhanced = 'badge-enhanced',   -- posit light blue
+  Advanced = 'badge-advanced',   -- posit dark blue
+  Workbench = 'badge-wb',        -- posit burgundy
+  Preview = 'badge-preview',     -- posit dark orange
+  Beta = 'badge-beta',           -- posit dark yellow
+}
+
+-- Utility to resolve metadata override
+local function resolve_meta_value(meta, version_text, key)
+  if meta["quarto-tiers"] then
+    if meta["quarto-tiers"][key] then
+      return pandoc.utils.stringify(meta["quarto-tiers"][key])
+    end
+    if meta["quarto-tiers"][version_text] and meta["quarto-tiers"][version_text][key] then
+      return pandoc.utils.stringify(meta["quarto-tiers"][version_text][key])
+    end
+  end
+  return ""
+end
+
 function render_tier(args, kwargs, meta)
-  if quarto.doc.is_format("html") then
-    quarto.doc.add_html_dependency({
-      name = 'quarto-tiers',
-      stylesheets = {"quarto-tiers.css"}
-    })
+  if not quarto.doc.is_format("html") then return nil end
 
-    local version_text = pandoc.utils.stringify(args[1])
+  quarto.doc.add_html_dependency({
+    name = 'quarto-tiers',
+    stylesheets = {"quarto-tiers.css"}
+  })
 
-    -- special case for root/lock icon
-    if version_text == "root" then
-      return pandoc.RawInline(
-        "html",
-        '<i class="bi bi-shield-lock" data-bs-toggle="tooltip" data-bs-placement="top" title="Requires root"></i>'
-      )
-    end
+  local version_text = pandoc.utils.stringify(args[1])
 
-    local css_class = ""
-    if version_text == "Basic" then
-      -- posit dark teal
-      css_class = 'badge-basic'
-    elseif version_text == "Enhanced" then
-      -- posit light blue
-      css_class = 'badge-enhanced'
-    elseif version_text == "Advanced" then
-      -- posit dark blue
-      css_class = 'badge-advanced'
-    elseif version_text == "Workbench" then
-      -- posit burgundy
-      css_class = 'badge-wb'
-    elseif version_text == "Preview" then
-      -- posit dark orange
-      css_class = 'badge-preview'
-    elseif version_text == "Beta" then
-      -- posit dark yellow
-      css_class = 'badge-beta'
-    else
-      -- posit gray
-      css_class = 'badge-alt'
-    end
-
-    local style = pandoc.utils.stringify(kwargs['style'])
-    local style_text = ""
-    if style ~= "" then
-      style_text = ' style="' .. style .. '"'
-    end
-
-    -- Global, then tier, then call-specific configurations for title and URL.
-
-    -- Note: kwargs[NAME] evaluates as truthy even when NAME is not in the
-    -- dictionary. This means that we cannot distinguish between NAME="" and
-    -- NAME not present in the shortcode.
-
-    local title = pandoc.utils.stringify(kwargs['title'])
-    if title == "" then
-      if meta["quarto-tiers"] then
-        if meta["quarto-tiers"]["title"] then
-          title = pandoc.utils.stringify(meta["quarto-tiers"]["title"])
-        end
-        if meta["quarto-tiers"][version_text] then
-          if meta["quarto-tiers"][version_text]["title"] then
-            title = pandoc.utils.stringify(meta["quarto-tiers"][version_text]["title"])
-          end
-        end
-      end
-    end
-
-    local url = pandoc.utils.stringify(kwargs['url'])
-    if url == "" then
-      if meta["quarto-tiers"] then
-        if meta["quarto-tiers"]["url"] then
-          url = pandoc.utils.stringify(meta["quarto-tiers"]["url"])
-        end
-        if meta["quarto-tiers"][version_text] then
-          if meta["quarto-tiers"][version_text]["url"] then
-            url = pandoc.utils.stringify(meta["quarto-tiers"][version_text]["url"])
-          end
-        end
-      end
-    end
-
-    local title_text = ""
-    if title ~= "" then
-      title_text = ' title="' .. title .. '"'
-    end
-
-    local tag = "span"
-    local link_text = ""
-    local nav_class = ""
-    if url ~= "" then
-      tag = "a"
-      link_text = ' href="' .. url .. '"'
-      -- no-external avoids external-link icons
-      nav_class = " no-external"
-    end
-
-    local class_text = ' class="badge rounded-pill ' .. css_class .. nav_class .. '"'
-
+  -- special case for root icon
+  if version_text == "root" then
     return pandoc.RawInline(
-      'html',
-      '<' .. tag .. link_text .. title_text .. class_text .. style_text .. '>' ..
-      version_text ..
-      '</' .. tag .. '>'
+      "html",
+      '<i class="bi bi-shield-lock" data-bs-toggle="tooltip" data-bs-placement="top" title="Requires root"></i>'
     )
   end
+
+  -- CSS class assignment
+  local css_class = badge_classes[version_text] or 'badge-alt'
+
+  -- Optional inline style
+  local style = pandoc.utils.stringify(kwargs['style'])
+  local style_text = (style ~= "") and (' style="' .. style .. '"') or ""
+
+  -- Title (explicit > global > version-specific)
+  local title = pandoc.utils.stringify(kwargs['title'])
+  if title == "" then
+    title = resolve_meta_value(meta, version_text, "title")
+  end
+  local title_text = (title ~= "") and (' title="' .. title .. '"') or ""
+
+  -- URL (explicit > global > version-specific)
+  local url = pandoc.utils.stringify(kwargs['url'])
+  if url == "" then
+    url = resolve_meta_value(meta, version_text, "url")
+  end
+
+  -- Final HTML construction
+  local tag, link_text, nav_class = "span", "", ""
+  if url ~= "" then
+    tag = "a"
+    link_text = ' href="' .. url .. '"'
+    nav_class = " no-external"
+  end
+
+  local class_text = ' class="badge rounded-pill ' .. css_class .. nav_class .. '"'
+
+  return pandoc.RawInline(
+    'html',
+    '<' .. tag .. link_text .. title_text .. class_text .. style_text .. '>' ..
+    version_text ..
+    '</' .. tag .. '>'
+  )
 end
 
 return {
-  ['tier'] = function(args, kwargs, meta)
-    return render_tier(args, kwargs, meta)
-  end,
-  ['requirement'] = function(args, kwargs, meta)
-    return render_tier(args, kwargs, meta)
-  end
+  ['tier'] = render_tier,
+  ['requirement'] = render_tier,
+  ['status'] = render_tier
 }
