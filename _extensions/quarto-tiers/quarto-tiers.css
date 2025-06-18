@@ -15,7 +15,7 @@
 }
 
 .badge-basic {
-  background-color: #7494b1; //posit-light-blue-3
+  background-color: #297075; //posit-dark-teal-1
 }
 
 .badge-enhanced {
@@ -32,10 +32,4 @@
 
 .badge-wb {
   background-color: #9A4665;
-}
-
-.badge-root {
-  border: 1px solid #1f4f4f; 
-  color: #1f4f4f !important;
-  text-decoration: none !important;
 }
