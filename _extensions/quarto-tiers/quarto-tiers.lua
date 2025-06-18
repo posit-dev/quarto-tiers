@@ -32,8 +32,8 @@ return {
 
       local version_text = pandoc.utils.stringify(args[1])
 
-      -- special case for shield icon
-      if version_text == "shield" then
+      -- special case for lock icon
+      if version_text == "lock" then
         return pandoc.RawInline(
           "html",
           '<i class="bi bi-shield-lock" data-bs-toggle="tooltip" data-bs-placement="top" title="Requires root"></i>'
