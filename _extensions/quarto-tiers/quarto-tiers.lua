@@ -28,7 +28,7 @@ local badge_classes = {
   Enhanced = 'badge-enhanced',   -- posit light blue
   Advanced = 'badge-advanced',   -- posit dark blue
   Workbench = 'badge-wb',        -- posit burgundy
-  Preview = 'badge-preview',     -- posit dark orange
+  Preview = 'badge-preview',     -- posit darkened orange
   Beta = 'badge-beta',           -- posit dark yellow
 }
 
