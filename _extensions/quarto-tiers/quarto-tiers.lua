@@ -41,7 +41,7 @@ function render_tier(args, kwargs, meta)
 
     local css_class = ""
     if version_text == "Basic" then
-      -- posit blue
+      -- posit dark teal
       css_class = 'badge-basic'
     elseif version_text == "Enhanced" then
       -- posit light blue
@@ -52,9 +52,12 @@ function render_tier(args, kwargs, meta)
     elseif version_text == "Workbench" then
       -- posit burgundy
       css_class = 'badge-wb'
-    elseif version_text == "Requires" then
-      -- posit teal
-      css_class = 'badge-root'
+    elseif version_text == "Preview" then
+      -- posit dark orange
+      css_class = 'badge-preview'
+    elseif version_text == "Beta" then
+      -- posit dark yellow
+      css_class = 'badge-beta'
     else
       -- posit gray
       css_class = 'badge-alt'
