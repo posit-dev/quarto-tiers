@@ -83,7 +83,7 @@ Blah, blah, blah. Licensing restriction.
 
 ### An icon
 
-{{< tier shield >}}
+{{< requirement root >}}
 
 An icon to indicate "requires root".
 
