@@ -31,6 +31,15 @@ return {
       })
 
       local version_text = pandoc.utils.stringify(args[1])
+
+      -- special case for lock icon
+      if version_text == "lock" then
+        return pandoc.RawInline(
+          "html",
+          '<i class="bi bi-shield-lock" data-bs-toggle="tooltip" data-bs-placement="top" title="Requires root"></i>'
+        )
+      end
+
       if version_text == "Basic" then
         -- posit blue
         css_class = 'badge-basic'
@@ -61,7 +70,7 @@ return {
       -- Note: kwargs[NAME] evaluates as truthy even when NAME is not in the
       -- dictionary. This means that we cannot distinguish between NAME="" and
       -- NAME not present in the shortcode.
-      
+
       local title = pandoc.utils.stringify(kwargs['title'])
       if title == "" then
         if meta["quarto-tiers"] then
@@ -75,7 +84,7 @@ return {
           end
         end
       end
-        
+
       local url = pandoc.utils.stringify(kwargs['url'])
       if url == "" then
         if meta["quarto-tiers"] then
@@ -106,7 +115,7 @@ return {
       end
 
       local class_text = ' class="badge rounded-pill ' .. css_class .. nav_class .. '"'
-      
+
       return pandoc.RawInline(
         'html',
         '<' .. tag .. link_text .. title_text .. class_text .. style_text .. '>' ..
