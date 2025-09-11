@@ -11,7 +11,9 @@
 .badge-preview,
 .badge-preview:hover,
 .badge-beta,
-.badge-beta:hover {
+.badge-beta:hover,
+.badge-drivers,
+.badge-drivers:hover {
   color: #fff;
   white-space: nowrap;
   text-decoration: none;
@@ -45,4 +47,8 @@
 .badge-beta {
   background-color: #e7b10a;
   color: #000000 !important;
+}
+
+.badge-drivers {
+  background-color: #961be3;
 }

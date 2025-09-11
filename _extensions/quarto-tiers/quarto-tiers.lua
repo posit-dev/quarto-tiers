@@ -30,6 +30,7 @@ local badge_classes = {
   Workbench = 'badge-wb',        -- posit burgundy
   Preview = 'badge-preview',     -- posit darkened orange
   Beta = 'badge-beta',           -- posit dark yellow
+  ["Pro Drivers"] = 'badge-drivers',  
 }
 
 -- Utility to resolve metadata override
@@ -52,8 +53,13 @@ function render_tier(args, kwargs, meta)
     name = 'quarto-tiers',
     stylesheets = {"quarto-tiers.css"}
   })
-
-  local version_text = pandoc.utils.stringify(args[1])
+  
+  -- Handle multi-word tiers
+  local all_args = {}
+  for i, arg in ipairs(args) do
+    table.insert(all_args, pandoc.utils.stringify(arg))
+  end
+  local version_text = table.concat(all_args, " ")
 
   -- special case for root icon
   if version_text == "root" then
@@ -65,6 +71,10 @@ function render_tier(args, kwargs, meta)
 
   -- CSS class assignment
   local css_class = badge_classes[version_text] or 'badge-alt'
+  -- Handle special case for Pro Drivers
+  if version_text == "Pro Drivers" then
+    css_class = 'badge-drivers'
+  end
 
   -- Optional inline style
   local style = pandoc.utils.stringify(kwargs['style'])
