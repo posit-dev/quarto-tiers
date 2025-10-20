@@ -101,7 +101,7 @@ function render_tier(args, kwargs, meta)
     nav_class = " no-external"
   end
 
-  local class_text = ' class="badge rounded-pill ' .. css_class .. nav_class .. '"'
+  local class_text = ' class="badge ' .. css_class .. nav_class .. '"'
 
   return pandoc.RawInline(
     'html',
