@@ -8,7 +8,7 @@ styled packaging tiers for Posit pro products.
 First, install the extension:
 
 ```bash
-quarto add [posit-dev/quarto-tiers@v3.0.0
+quarto add posit-dev/quarto-tiers@v3.0.0
 ```
 
 
