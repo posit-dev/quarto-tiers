@@ -5,28 +5,22 @@ styled packaging tiers for Posit pro products.
 
 ## Installing
 
-This repository is not public, so you cannot use `quarto add` to add it to
-your Quarto project using the `rstudio/quarto-tiers` GitHub repository path.
-
-Instead, clone the repository locally and then call `quarto add` with a
-file-system path.
+First, install the extension:
 
 ```bash
-quarto add [path-to-repository]/quarto-tiers
+quarto add [posit-dev/quarto-tiers@v3.0.0
 ```
 
-This will install the extension under the `_extensions` subdirectory.
-If you're using version control, you will want to check in this directory.
 
 ## Using
 
 The `{{< tier <tier-name> >}}` shortcode is available once the extension is installed
 into your Quarto project.
 
-The `{{< tier <tier-name> >}}` shortcode will display a badge using the
-default styling for that tier. The three packaging tiers, "Basic", "Enhanced",
-and "Advanced" receive the three tier colors. The "Workbench" receives Posit
-maroon. Other tier names use the Posit dark gray.
+The `{{< tier <tier-name> >}}` shortcode displays a badge using the
+default styling for that tier. The three packaging tiers include: "Basic", "Enhanced",
+and "Advanced". In addition, we've included several additional tiers to fulfill company needs, such as "Workbench", which receives Posit
+maroon. The "Alternate" tier and any unassigned tiers use Posit gray.
 
 ```markdown
 {{< tier Basic >}}
@@ -44,11 +38,11 @@ document table-of-contents to render poorly and is not recommended in that
 context.
 
 All badges are annotated with the `badge` and `rounded-pill` Bootstrap
-classes. Each bad also receives one of the five CSS classes: `badge-basic`,
+classes. Each badge also receives one of the five CSS classes: `badge-basic`,
 `badge-enhanced`, `badge-advanced`, `badge-wb`, and `badge-alt`, which define
 tier-specific styles.
 
-Additional CSS styles can be provided with the `style` parameter which will be
+Additional CSS styles can be provided with the `style` parameter, which will be
 added to the badge as inline CSS.
 
 ```markdown
